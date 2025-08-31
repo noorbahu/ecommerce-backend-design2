@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= product.name %> - eCommerce</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/products">Products</a>
+    </nav>
+    <h1><%= product.name %></h1>
+    <img src="<%= product.image %>" alt="<%= product.name %>" style="max-width: 100%; height: auto;">
+
+    <p><strong>Description:</strong> <%= product.description %></p>
+    <p><strong>Price:</strong> $<%= product.price %></p>
+    <p><strong>Category:</strong> <%= product.category %></p>
+    <p><strong>Stock:</strong> <%= product.stock %></p>
+
+    <a href="/products">Back to Products</a>
+</body>
+</html>

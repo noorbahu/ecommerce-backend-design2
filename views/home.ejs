@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - eCommerce</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <h1>Welcome to the eCommerce Home Page</h1>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/products">Products</a>
+    </nav>
+    <p>Shop the best products here!</p>
+
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+        <% if (featured && featured.length > 0) { %>
+            <% featured.forEach(product => { %>
+                <div class="product-card">
+                    <img src="<%= product.image %>" alt="<%= product.name %>" style="width:100px;">
+                    <h3><%= product.name %></h3>
+                    <p>Price: $<%= product.price %></p>
+                    <a href="/products/<%= product._id %>">View Details</a>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No featured products found.</p>
+        <% } %>
+    </div>
+</body>
+</html>
